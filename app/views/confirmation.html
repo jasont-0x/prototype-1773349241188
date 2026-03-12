@@ -1,0 +1,24 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Alien encounter report submitted" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Alien encounter report submitted</h1>
+      <div class="govuk-panel__body">
+        Your reference number<br>
+        <strong>{{ data["reference"] }}</strong>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">Your report has been received and will be reviewed by our extraterrestrial investigation team. We take all reports seriously and will investigate where appropriate.</p>
+    <p class="govuk-body">We will contact you within 10 working days if we need more information</p>
+    <p class="govuk-body"><a href="/start" class="govuk-link">Start a new application</a></p>
+
+  </div>
+</div>
+{% endblock %}
