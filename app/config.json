@@ -1,0 +1,5 @@
+{
+  "serviceName": "Report an alien encounter",
+  "serviceUrl": "/start",
+  "useAuth": false
+}
