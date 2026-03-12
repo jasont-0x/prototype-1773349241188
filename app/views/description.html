@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Describe what happened during the encounter" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+
+    {% if errors and errors["description"] %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [{ text: errors["description"], href: "#description" }]
+    }) }}
+    {% endif %}
+
+    <form method="post" novalidate>
+    {{ govukTextarea({
+      id: "description",
+      name: "description",
+      label: {
+        text: "Describe what happened during the encounter",
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      },
+      hint: { text: "Include what you saw, heard or felt. Give as much detail as possible." },
+      errorMessage: errors["description"] if errors else null,
+      value: data["description"],
+      rows: 5
+    }) }}
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}
